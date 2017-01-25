@@ -1,0 +1,31 @@
+In previous exercises we made instance variables that we can use to store the attriubutes of an instance(member of that class), but what if we want to store all instances(members) of that class in an array or hash? Create a class variable named @@everyoneand set it equal to an empty array. In this array we are going to store all the instances of Person, try to do this by creating a save method. The save method should also print @@everyone out to the console, so we can see all the people that are in our storage.
+
+
+class Person
+  attr_accessor :name, :hair_color
+  @@everyone = []
+
+  def initialize(name, hair_color)
+    @name = name
+    @hair_color = hair_color
+  end
+
+  def sing
+    puts " #{@name} is singing "
+  end
+  def save
+    @@everyone << self
+    @@everyone.each { |item| puts item.name }
+    puts ""
+  end
+end
+
+
+person1 = Person.new("joe","black")
+person1.save
+person2 = Person.new("jim","black")
+person2.save
+person3 = Person.new("jon","black")
+person3.save
+person4 = Person.new("jak","black")
+person4.save
